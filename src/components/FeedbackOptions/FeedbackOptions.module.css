@@ -1,0 +1,46 @@
+.feedbackButton {
+  display: block;
+
+  margin: 0 auto;
+
+  min-width: 150px;
+  height: 40px;
+
+  scale: 1;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(49, 102, 199);
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  font-size: 24px;
+
+  transition: scale 250ms linear;
+}
+
+.feedbackButton:hover,
+.feedbackButton:focus {
+  scale: 1.1;
+}
+
+.feedbackButton:active {
+  scale: 0.9;
+}
+
+.feedbackButton:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .feedbackInterface {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .feedbackButton {
+    display: block;
+
+    margin: 0;
+  }
+}
