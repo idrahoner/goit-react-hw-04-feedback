@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 import Section from 'components/Section';
@@ -35,7 +34,7 @@ export default function App() {
 
   const totalFeedbacks = good + neutral + bad;
 
-  const positive = Math.round((good / (good + neutral + bad)) * 100);
+  const positive = Math.round((good / totalFeedbacks) * 100);
 
   return (
     <>
