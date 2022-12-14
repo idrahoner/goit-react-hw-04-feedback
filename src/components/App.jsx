@@ -6,29 +6,29 @@ import FeedbackOptions from 'components/FeedbackOptions';
 import Statistics from 'components/Statistics';
 import Notification from 'components/Notification';
 
+const FEEDBACK_OPTIONS = ['good', 'neutral', 'bad'];
+
 export default function App() {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const handleFeedback = event => {
-    const button = event.currentTarget.textContent.toLowerCase();
-
-    switch (button) {
+  const handleFeedback = feedback => {
+    switch (feedback) {
       case 'good':
-        setGood(good + 1);
+        setGood(prevState => prevState + 1);
         break;
 
       case 'neutral':
-        setNeutral(neutral + 1);
+        setNeutral(prevState => prevState + 1);
         break;
 
       case 'bad':
-        setBad(bad + 1);
+        setBad(prevState => prevState + 1);
         break;
 
       default:
-        return window.alert('Something went wrong!');
+        return;
     }
   };
 
@@ -40,7 +40,7 @@ export default function App() {
     <>
       <Section title="Please leave your feedback">
         <FeedbackOptions
-          options={['good', 'neutral', 'bad']}
+          options={FEEDBACK_OPTIONS}
           onLeaveFeedback={handleFeedback}
         />
       </Section>

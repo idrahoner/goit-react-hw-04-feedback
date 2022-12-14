@@ -6,14 +6,14 @@ export default function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
     <>
       <div className={css.feedbackInterface}>
-        {options.map(element => (
+        {options.map(feedback => (
           <button
-            key={element}
+            key={feedback}
             type="button"
-            onClick={onLeaveFeedback}
+            onClick={() => onLeaveFeedback(feedback)}
             className={css.feedbackButton}
           >
-            {capitalizeString(element)}
+            {capitalizeString(feedback)}
           </button>
         ))}
       </div>
